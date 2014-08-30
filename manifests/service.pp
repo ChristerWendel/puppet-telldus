@@ -5,7 +5,7 @@ class telldus::service {
   $ensure = $telldus::start ? {true => running, default => stopped}
 
   service { 'telldusd':
-    ensure  => $ensure,
-    enable  => $telldus::enable,
+    ensure => $ensure,
+    enable => $telldus::enable,
   }
 }
