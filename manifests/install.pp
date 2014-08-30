@@ -6,7 +6,7 @@ class telldus::install {
 
   aptrepo::addrepo { 'telldus':
     location => 'http://download.telldus.com/debian/',
-    key      => 'http://download.telldus.se/debian/telldus-public.key',
+    key      => 'http://download.telldus.com/debian/telldus-public.key',
   } -> Package['telldus-core']
 
   package { 'telldus-core':
