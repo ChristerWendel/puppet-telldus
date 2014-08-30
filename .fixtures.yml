@@ -1,3 +1,3 @@
 fixtures:
   repositories:
-    'aptrepo': 'git://gitcom.com/ChristerWendel/puppet-aptrepo'
+    aptrepo: 'git://github.com/ChristerWendel/puppet-aptrepo'
