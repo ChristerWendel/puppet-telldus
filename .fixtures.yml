@@ -1,0 +1,3 @@
+fixtures:
+  repositories:
+    aptrepo: 'git://github.com/ChristerWendel/puppet-aptrepo'
