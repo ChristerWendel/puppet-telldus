@@ -5,3 +5,6 @@ notifications:
 env:
   - PUPPET_VERSION=3.4.3
   - PUPPET_VERSION=3.6.1
+
+before_script:
+  - 'git clone git://github.com/ChristerWendel/puppet-aptrepo.git spec/fixtures/modules/aptrepo'
