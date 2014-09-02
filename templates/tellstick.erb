@@ -1,0 +1,27 @@
+user = "nobody"
+group = "plugdev"
+deviceNode = "/dev/tellstick"
+ignoreControllerConfirmation = "false"
+
+<% @devices.each do |device| -%>
+device {
+  id = <%= @devices.index(device) + 1 %>
+  name = "<%= device['name'] %>"
+  controller = 0
+  protocol = "arctech"
+  model = "codeswitch:proove"
+  parameters {
+    house = "<%= device['house'] %>"
+    unit = "<%= device['unit'] %>"
+    code = "0000000000"
+    system = "1"
+    fade = "false"
+  }
+}
+<% end -%>
+
+controller {
+  id = 1
+  type = 2
+  serial = "<%= @controller %>"
+}
