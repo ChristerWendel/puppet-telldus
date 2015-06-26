@@ -71,4 +71,18 @@ describe 'telldus', :type => :class do
         .with_content(/serial = \"12345\"/)
     }
   end
+
+  context 'collect virtual resource' do
+    let :pre_condition do
+      'File <| tag == logstash |>'
+    end
+
+    it { should contain_file('/etc/logstash/conf.d/telldus.conf')
+        .with_ensure('present')
+        .with_owner('logstash')
+        .with_group('logstash')
+        .with_mode('0644')
+        .with_source('puppet:///modules/telldus/logstash.conf')
+    }
+  end
 end

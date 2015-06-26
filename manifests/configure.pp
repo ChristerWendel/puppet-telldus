@@ -12,4 +12,13 @@ class telldus::configure {
     mode    => '0664',
     content => template('telldus/tellstick.erb'),
   }
+
+  @file { '/etc/logstash/conf.d/telldus.conf':
+    ensure => present,
+    owner  => 'logstash',
+    group  => 'logstash',
+    mode   => '0644',
+    source => 'puppet:///modules/telldus/logstash.conf',
+    tag    => [logstash],
+  }
 }
